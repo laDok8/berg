@@ -75,6 +75,7 @@ describe("TESTS: Update Manager => Channels", () => {
     cy.navigateToSpecificChannel(managementEndpoint, channels.gav.name);
     cy.editForm(channelForm);
     cy.formInput(channelForm, "repositories")
+      .should("be.enabled")
       .clear()
       .type(channels.updateGav.repositories + "{enter}")
       .trigger("change");
